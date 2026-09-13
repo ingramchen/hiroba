@@ -1,0 +1,371 @@
+:root {
+  --sys-page: #eeeeee;
+  --sys-panel: #ffffff;
+  --sys-stripe: #f0f0f0;
+  --sys-line: #bbbbbb;
+  --sys-line-soft: #dddddd;
+  --sys-ink: #333333;
+  --sys-ink-soft: #888888;
+  --sys-blue: #0c4a8a;
+  --sys-dark-blue: #002590;
+  --sys-light-blue: #e8eef5;
+  --sys-red: #cc0000;
+  --sys-dark-red: #90001e;
+  --sys-light-red: #f6e4ea;
+  --sys-green: #2b8f00;
+  --sys-light-green: #eaf6e5;
+  --sys-yellow: #f6efe4;
+  --sys-dark-yellow: #926f04;
+}
+
+* {
+  border-radius: 0 !important;
+}
+
+body {
+  margin: 0;
+  background: var(--sys-page);
+  color: var(--sys-ink);
+  font-family: sans-serif;
+  font-size: 13px;
+}
+
+.sys-shell {
+  display: flex;
+  min-height: 100vh;
+  align-items: stretch;
+}
+
+.sys-sidebar {
+  width: 176px;
+  flex: 0 0 176px;
+  background: var(--sys-panel);
+  border-right: 1px solid var(--sys-line);
+  display: flex;
+  flex-direction: column;
+}
+
+.sys-brand {
+  padding: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--sys-dark-blue);
+  border-bottom: 1px solid var(--sys-line);
+}
+
+.sys-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sys-nav-item {
+  appearance: none;
+  border: 0;
+  border-bottom: 1px solid var(--sys-line-soft);
+  border-left: 3px solid transparent;
+  background: transparent;
+  color: var(--sys-ink);
+  font: inherit;
+  text-align: left;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.sys-nav-item:hover {
+  background: var(--sys-stripe);
+}
+
+.sys-nav-item.is-active {
+  background: var(--sys-light-blue);
+  border-left-color: var(--sys-blue);
+  font-weight: bold;
+}
+
+.sys-nav-group {
+  padding: 8px 12px 2px;
+  color: var(--sys-ink-soft);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.sys-main {
+  flex: 1 1 auto;
+  padding: 16px;
+  min-width: 0;
+}
+
+.sys-view-title {
+  margin: 0 0 12px;
+  font-size: 16px;
+  color: var(--sys-dark-blue);
+}
+
+.sys-panel {
+  background: var(--sys-panel);
+  border: 1px solid var(--sys-line);
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.sys-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.sys-note {
+  color: var(--sys-ink-soft);
+  margin: 6px 0 0;
+}
+
+.sys-empty {
+  color: var(--sys-ink-soft);
+  padding: 8px 0;
+}
+
+input.sys-input,
+textarea.sys-input {
+  border: 1px solid var(--sys-line);
+  background: var(--sys-panel);
+  color: var(--sys-ink);
+  font: inherit;
+  padding: 4px 6px;
+}
+
+textarea.sys-input {
+  width: 420px;
+  height: 200px;
+}
+
+button.sys-button {
+  appearance: none;
+  border: 1px solid var(--sys-line);
+  background: var(--sys-stripe);
+  color: var(--sys-ink);
+  font: inherit;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+
+button.sys-button:hover {
+  background: var(--sys-light-blue);
+  border-color: var(--sys-blue);
+}
+
+button.sys-button.is-active {
+  background: var(--sys-light-blue);
+  border-color: var(--sys-blue);
+  font-weight: bold;
+}
+
+button.sys-button.is-danger {
+  color: var(--sys-dark-red);
+}
+
+button.sys-button.is-danger:hover {
+  background: var(--sys-light-red);
+  border-color: var(--sys-red);
+}
+
+table.sys-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.sys-table th {
+  text-align: left;
+  font-weight: bold;
+  color: var(--sys-ink-soft);
+  border-bottom: 1px solid var(--sys-line);
+  padding: 4px 6px;
+  white-space: nowrap;
+}
+
+.sys-table td {
+  padding: 4px 6px;
+  border-bottom: 1px solid var(--sys-line-soft);
+  vertical-align: middle;
+}
+
+.sys-table tbody tr:nth-child(even) {
+  background: var(--sys-stripe);
+}
+
+.sys-mono {
+  font-family: monospace;
+}
+
+.sys-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sys-stat {
+  background: var(--sys-panel);
+  border: 1px solid var(--sys-line);
+  padding: 10px 14px;
+  min-width: 120px;
+}
+
+.sys-stat-label {
+  color: var(--sys-ink-soft);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sys-stat-value {
+  font-size: 22px;
+  color: var(--sys-dark-blue);
+}
+
+.sys-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 80px;
+  border-bottom: 1px solid var(--sys-line);
+}
+
+.sys-bar {
+  flex: 1 1 0;
+  background: var(--sys-blue);
+  min-height: 1px;
+}
+
+.sys-banner {
+  background: var(--sys-yellow);
+  border: 1px solid var(--sys-dark-yellow);
+  color: var(--sys-dark-yellow);
+  padding: 8px 12px;
+  margin-bottom: 12px;
+}
+
+.sys-badge {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px solid var(--sys-line);
+  background: var(--sys-stripe);
+  color: var(--sys-ink-soft);
+}
+
+.sys-badge.is-on {
+  background: var(--sys-light-red);
+  border-color: var(--sys-red);
+  color: var(--sys-dark-red);
+}
+
+.sys-badge.is-read {
+  background: var(--sys-light-green);
+  border-color: var(--sys-green);
+  color: var(--sys-green);
+}
+
+.sys-feed {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sys-feed-card {
+  border: 1px solid var(--sys-line);
+  background: var(--sys-panel);
+  width: 180px;
+  padding: 6px;
+}
+
+.sys-feed-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  background: var(--sys-stripe);
+  display: block;
+  cursor: pointer;
+}
+
+.sys-feed-meta {
+  font-size: 11px;
+  color: var(--sys-ink-soft);
+  margin: 4px 0;
+  overflow-wrap: anywhere;
+}
+
+.sys-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.sys-dialog {
+  background: var(--sys-panel);
+  border: 1px solid var(--sys-line);
+  min-width: 280px;
+}
+
+.sys-dialog-caption {
+  background: var(--sys-light-blue);
+  border-bottom: 1px solid var(--sys-line);
+  padding: 6px 12px;
+  font-weight: bold;
+  color: var(--sys-dark-blue);
+}
+
+.sys-dialog-body {
+  padding: 16px 12px;
+}
+
+.sys-dialog-controls {
+  padding: 8px 12px;
+  border-top: 1px solid var(--sys-line-soft);
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.sys-preview img {
+  max-width: 80vw;
+  max-height: 70vh;
+  display: block;
+}
+
+.sys-toasts {
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 20;
+}
+
+.sys-toast {
+  padding: 6px 12px;
+  border: 1px solid var(--sys-green);
+  background: var(--sys-light-green);
+  color: var(--sys-green);
+}
+
+.sys-toast.is-failure {
+  border-color: var(--sys-red);
+  background: var(--sys-light-red);
+  color: var(--sys-dark-red);
+}
+
+.sys-gate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.sys-square-name a {
+  color: var(--sys-dark-blue);
+}

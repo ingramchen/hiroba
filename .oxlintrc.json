@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "ignorePatterns": [
+    "art/**",
+    "build/**",
+    "hiroba-server/**",
+    "hiroba-storage/**",
+    "hiroba-transport/**",
+    "hiroba-utils/**",
+    "libs/**",
+    "**/dist/**",
+    "server/drizzle/**"
+  ]
+}

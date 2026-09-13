@@ -1,0 +1,1314 @@
+{
+  "categories": [
+    {
+      "name": "RECENT",
+      "icon": "recent"
+    },
+    {
+      "name": "SMILE",
+      "icon": "people"
+    },
+    {
+      "name": "NATURE",
+      "icon": "nature"
+    },
+    {
+      "name": "THING",
+      "icon": "objects"
+    },
+    {
+      "name": "LEGACY",
+      "icon": "activity"
+    }
+  ],
+  "excludedCategories": [
+    {
+      "name": "SYMBOL",
+      "icon": "symbols"
+    },
+    {
+      "name": "FOOD",
+      "icon": "foods"
+    }
+  ],
+  "entries": [
+    {
+      "name": "WINK",
+      "category": "LEGACY",
+      "symbol": ";)",
+      "unicode": null
+    },
+    {
+      "name": "ANGEL",
+      "category": "LEGACY",
+      "symbol": "(a)",
+      "unicode": null
+    },
+    {
+      "name": "ANGRY",
+      "category": "LEGACY",
+      "symbol": ":@",
+      "unicode": null
+    },
+    {
+      "name": "BAD",
+      "category": "LEGACY",
+      "symbol": "(n)",
+      "unicode": null
+    },
+    {
+      "name": "CAT",
+      "category": "LEGACY",
+      "symbol": "(@)",
+      "unicode": null
+    },
+    {
+      "name": "CONFUSED",
+      "category": "LEGACY",
+      "symbol": ":s",
+      "unicode": null
+    },
+    {
+      "name": "CRYING",
+      "category": "LEGACY",
+      "symbol": ":'(",
+      "unicode": null
+    },
+    {
+      "name": "DEVIL",
+      "category": "LEGACY",
+      "symbol": "(6)",
+      "unicode": null
+    },
+    {
+      "name": "DOG",
+      "category": "LEGACY",
+      "symbol": "(dog)",
+      "unicode": null
+    },
+    {
+      "name": "EMBARRASSED",
+      "category": "LEGACY",
+      "symbol": "(emb)",
+      "unicode": null
+    },
+    {
+      "name": "EYEROLL",
+      "category": "LEGACY",
+      "symbol": "8-)",
+      "unicode": null
+    },
+    {
+      "name": "FINGERS_CROSSED",
+      "category": "LEGACY",
+      "symbol": "(yn)",
+      "unicode": null
+    },
+    {
+      "name": "GLASSES_COOL",
+      "category": "LEGACY",
+      "symbol": "(h)",
+      "unicode": null
+    },
+    {
+      "name": "GOOD",
+      "category": "LEGACY",
+      "symbol": "(y)",
+      "unicode": null
+    },
+    {
+      "name": "HUG_LEFT",
+      "category": "LEGACY",
+      "symbol": "(hl)",
+      "unicode": null
+    },
+    {
+      "name": "HUG_RIGHT",
+      "category": "LEGACY",
+      "symbol": "(hr)",
+      "unicode": null
+    },
+    {
+      "name": "LOVE",
+      "category": "LEGACY",
+      "symbol": "(l)",
+      "unicode": null
+    },
+    {
+      "name": "LOVE_OVER",
+      "category": "LEGACY",
+      "symbol": "(u)",
+      "unicode": null
+    },
+    {
+      "name": "MOON",
+      "category": "LEGACY",
+      "symbol": "(s)",
+      "unicode": null
+    },
+    {
+      "name": "NEUTRAL",
+      "category": "LEGACY",
+      "symbol": ":|",
+      "unicode": null
+    },
+    {
+      "name": "PARTY",
+      "category": "LEGACY",
+      "symbol": "(pa)",
+      "unicode": null
+    },
+    {
+      "name": "PHONE",
+      "category": "LEGACY",
+      "symbol": "(t)",
+      "unicode": null
+    },
+    {
+      "name": "ROSE",
+      "category": "LEGACY",
+      "symbol": "(f)",
+      "unicode": null
+    },
+    {
+      "name": "ROSE_DEAD",
+      "category": "LEGACY",
+      "symbol": "(w)",
+      "unicode": null
+    },
+    {
+      "name": "SAD",
+      "category": "LEGACY",
+      "symbol": ":(",
+      "unicode": null
+    },
+    {
+      "name": "SARCASTIC",
+      "category": "LEGACY",
+      "symbol": "^o)",
+      "unicode": null
+    },
+    {
+      "name": "SICK",
+      "category": "LEGACY",
+      "symbol": "+o(",
+      "unicode": null
+    },
+    {
+      "name": "CIGARETTE",
+      "category": "LEGACY",
+      "symbol": "(ci)",
+      "unicode": null
+    },
+    {
+      "name": "SMILE",
+      "category": "LEGACY",
+      "symbol": ":)",
+      "unicode": null
+    },
+    {
+      "name": "SMILE_BIG",
+      "category": "LEGACY",
+      "symbol": ":d",
+      "unicode": null
+    },
+    {
+      "name": "STAR",
+      "category": "LEGACY",
+      "symbol": "(*)",
+      "unicode": null
+    },
+    {
+      "name": "SHOCK",
+      "category": "LEGACY",
+      "symbol": ":-o",
+      "unicode": null
+    },
+    {
+      "name": "THINKING",
+      "category": "LEGACY",
+      "symbol": "*-)",
+      "unicode": null
+    },
+    {
+      "name": "TONGUE",
+      "category": "LEGACY",
+      "symbol": ":p",
+      "unicode": null
+    },
+    {
+      "name": "VAMPIRE",
+      "category": "LEGACY",
+      "symbol": "(va)",
+      "unicode": null
+    },
+    {
+      "name": "NEW_WINK",
+      "category": "SMILE",
+      "symbol": "(wink)",
+      "unicode": "1f609"
+    },
+    {
+      "name": "INNOCENT",
+      "category": "SMILE",
+      "symbol": "(angel)",
+      "unicode": "1f607"
+    },
+    {
+      "name": "NEW_ANGRY",
+      "category": "SMILE",
+      "symbol": "(angry)",
+      "unicode": "1f620"
+    },
+    {
+      "name": "CONFOUNDED",
+      "category": "SMILE",
+      "symbol": "(xw)",
+      "unicode": "1f616"
+    },
+    {
+      "name": "CRY",
+      "category": "SMILE",
+      "symbol": "(cry)",
+      "unicode": "1f622"
+    },
+    {
+      "name": "SOB",
+      "category": "SMILE",
+      "symbol": "(sob)",
+      "unicode": "1f62d"
+    },
+    {
+      "name": "SMILING_IMP",
+      "category": "SMILE",
+      "symbol": "(imp)",
+      "unicode": "1f608"
+    },
+    {
+      "name": "LAUGHING",
+      "category": "SMILE",
+      "symbol": "(xd)",
+      "unicode": "1f606"
+    },
+    {
+      "name": "BLUSH",
+      "category": "SMILE",
+      "symbol": "(blush)",
+      "unicode": "1f60a"
+    },
+    {
+      "name": "ROLLING_EYES",
+      "category": "SMILE",
+      "symbol": "(eye)",
+      "unicode": "1f644"
+    },
+    {
+      "name": "SUNGLASSES",
+      "category": "SMILE",
+      "symbol": "(glass)",
+      "unicode": "1f60e"
+    },
+    {
+      "name": "HUGGING",
+      "category": "SMILE",
+      "symbol": "(hug)",
+      "unicode": "1f917"
+    },
+    {
+      "name": "NEUTRAL_FACE",
+      "category": "SMILE",
+      "symbol": "(neut)",
+      "unicode": "1f610"
+    },
+    {
+      "name": "RELAXED",
+      "category": "SMILE",
+      "symbol": "(relax)",
+      "unicode": "263a"
+    },
+    {
+      "name": "FROWNING2",
+      "category": "SMILE",
+      "symbol": "(frown)",
+      "unicode": "2639"
+    },
+    {
+      "name": "DISAPPOINTED",
+      "category": "SMILE",
+      "symbol": "(huu)",
+      "unicode": "1f61e"
+    },
+    {
+      "name": "UNAMUSED",
+      "category": "SMILE",
+      "symbol": "(--)",
+      "unicode": "1f612"
+    },
+    {
+      "name": "MASK",
+      "category": "SMILE",
+      "symbol": "(mask)",
+      "unicode": "1f637"
+    },
+    {
+      "name": "FLUSHED",
+      "category": "SMILE",
+      "symbol": "(flush)",
+      "unicode": "1f633"
+    },
+    {
+      "name": "GRINNING",
+      "category": "SMILE",
+      "symbol": "(grin2)",
+      "unicode": "1f600"
+    },
+    {
+      "name": "ASTONISHED",
+      "category": "SMILE",
+      "symbol": "(ooo)",
+      "unicode": "1f632"
+    },
+    {
+      "name": "DIZZY_FACE",
+      "category": "SMILE",
+      "symbol": "(xxo)",
+      "unicode": "1f635"
+    },
+    {
+      "name": "NEW_THINKING",
+      "category": "SMILE",
+      "symbol": "(think)",
+      "unicode": "1f914"
+    },
+    {
+      "name": "STUCK_OUT_TONGUE_CLOSED_EYES",
+      "category": "SMILE",
+      "symbol": "(tg)",
+      "unicode": "1f61d"
+    },
+    {
+      "name": "JOY",
+      "category": "SMILE",
+      "symbol": "(joy)",
+      "unicode": "1f602"
+    },
+    {
+      "name": "KISSING",
+      "category": "SMILE",
+      "symbol": "(kiss)",
+      "unicode": "1f617"
+    },
+    {
+      "name": "COLD_SWEAT",
+      "category": "SMILE",
+      "symbol": "(sweat)",
+      "unicode": "1f630"
+    },
+    {
+      "name": "SCREAM",
+      "category": "SMILE",
+      "symbol": "(scream)",
+      "unicode": "1f631"
+    },
+    {
+      "name": "TRIUMPH",
+      "category": "SMILE",
+      "symbol": "(triumph)",
+      "unicode": "1f624"
+    },
+    {
+      "name": "MONEY_MOUTH",
+      "category": "SMILE",
+      "symbol": "(mm)",
+      "unicode": "1f911"
+    },
+    {
+      "name": "SLEEPING",
+      "category": "SMILE",
+      "symbol": "(sleep)",
+      "unicode": "1f634"
+    },
+    {
+      "name": "GRIN",
+      "category": "SMILE",
+      "symbol": "(grin)",
+      "unicode": "1f601"
+    },
+    {
+      "name": "HEAD_BANDAGE",
+      "category": "SMILE",
+      "symbol": "(z-)",
+      "unicode": "1f915"
+    },
+    {
+      "name": "NEW_CONFUSED",
+      "category": "SMILE",
+      "symbol": "(oo-)",
+      "unicode": "1f615"
+    },
+    {
+      "name": "ZIPPER_MOUTH",
+      "category": "SMILE",
+      "symbol": "(zip)",
+      "unicode": "1f910"
+    },
+    {
+      "name": "PERSEVERE",
+      "category": "SMILE",
+      "symbol": "(xoo)",
+      "unicode": "1f623"
+    },
+    {
+      "name": "COP",
+      "category": "SMILE",
+      "symbol": "(cop)",
+      "unicode": "1f46e-1f3fd"
+    },
+    {
+      "name": "BOY",
+      "category": "SMILE",
+      "symbol": "(boy)",
+      "unicode": "1f466-1f3fe"
+    },
+    {
+      "name": "GIRL",
+      "category": "SMILE",
+      "symbol": "(girl)",
+      "unicode": "1f467-1f3fe"
+    },
+    {
+      "name": "NEW_CAT",
+      "category": "NATURE",
+      "symbol": "(cat)",
+      "unicode": "1f431"
+    },
+    {
+      "name": "NEW_DOG",
+      "category": "NATURE",
+      "symbol": "(dog2)",
+      "unicode": "1f436"
+    },
+    {
+      "name": "KOALA",
+      "category": "NATURE",
+      "symbol": "(koala)",
+      "unicode": "1f428"
+    },
+    {
+      "name": "HATCHING_CHICK",
+      "category": "NATURE",
+      "symbol": "(chick)",
+      "unicode": "1f423"
+    },
+    {
+      "name": "SEE_NO_EVIL",
+      "category": "NATURE",
+      "symbol": "(monkey)",
+      "unicode": "1f648"
+    },
+    {
+      "name": "WHALE",
+      "category": "NATURE",
+      "symbol": "(whale)",
+      "unicode": "1f433"
+    },
+    {
+      "name": "PIG",
+      "category": "NATURE",
+      "symbol": "(pig)",
+      "unicode": "1f437"
+    },
+    {
+      "name": "BEAR",
+      "category": "NATURE",
+      "symbol": "(bear)",
+      "unicode": "1f43b"
+    },
+    {
+      "name": "TIGER",
+      "category": "NATURE",
+      "symbol": "(tiger)",
+      "unicode": "1f42f"
+    },
+    {
+      "name": "BLOWFISH",
+      "category": "NATURE",
+      "symbol": "(blow)",
+      "unicode": "1f421"
+    },
+    {
+      "name": "DROMEDARY_CAMEL",
+      "category": "NATURE",
+      "symbol": "(camel)",
+      "unicode": "1f42a"
+    },
+    {
+      "name": "JACK_O_LANTERN",
+      "category": "NATURE",
+      "symbol": "(punk)",
+      "unicode": "1f383"
+    },
+    {
+      "name": "HEART_EYES_CAT",
+      "category": "NATURE",
+      "symbol": "(hcat)",
+      "unicode": "1f63b"
+    },
+    {
+      "name": "ALIEN",
+      "category": "NATURE",
+      "symbol": "(alien)",
+      "unicode": "1f47d"
+    },
+    {
+      "name": "ROBOT",
+      "category": "NATURE",
+      "symbol": "(robot)",
+      "unicode": "1f916"
+    },
+    {
+      "name": "FOUR_LEAF_CLOVER",
+      "category": "NATURE",
+      "symbol": "(lucky)",
+      "unicode": "1f340"
+    },
+    {
+      "name": "THUMBSUP",
+      "category": "NATURE",
+      "symbol": "(+1)",
+      "unicode": "1f44d"
+    },
+    {
+      "name": "THUMBSDOWN",
+      "category": "NATURE",
+      "symbol": "(-1)",
+      "unicode": "1f44e"
+    },
+    {
+      "name": "MIDDLE_FINGER",
+      "category": "NATURE",
+      "symbol": "(fck)",
+      "unicode": "1f595"
+    },
+    {
+      "name": "V",
+      "category": "NATURE",
+      "symbol": "(v)",
+      "unicode": "270c"
+    },
+    {
+      "name": "PUNCH",
+      "category": "NATURE",
+      "symbol": "(punch)",
+      "unicode": "1f44a"
+    },
+    {
+      "name": "HAND_SPLAYED",
+      "category": "NATURE",
+      "symbol": "(paper)",
+      "unicode": "1f590"
+    },
+    {
+      "name": "PRAY",
+      "category": "NATURE",
+      "symbol": "(pray)",
+      "unicode": "1f64f"
+    },
+    {
+      "name": "BEERS",
+      "category": "NATURE",
+      "symbol": "(beer)",
+      "unicode": "1f37b"
+    },
+    {
+      "name": "COFFEE",
+      "category": "NATURE",
+      "symbol": "(coffee)",
+      "unicode": "2615"
+    },
+    {
+      "name": "BIRTHDAY",
+      "category": "NATURE",
+      "symbol": "(cake)",
+      "unicode": "1f382"
+    },
+    {
+      "name": "PIZZA",
+      "category": "NATURE",
+      "symbol": "(pizza)",
+      "unicode": "1f355"
+    },
+    {
+      "name": "SUSHI",
+      "category": "NATURE",
+      "symbol": "(sushi)",
+      "unicode": "1f363"
+    },
+    {
+      "name": "RICE_BAL",
+      "category": "NATURE",
+      "symbol": "(rice)",
+      "unicode": "1f359"
+    },
+    {
+      "name": "POPCORN",
+      "category": "NATURE",
+      "symbol": "(corn)",
+      "unicode": "1f37f"
+    },
+    {
+      "name": "HOTDOG",
+      "category": "NATURE",
+      "symbol": "(hotdog)",
+      "unicode": "1f32d"
+    },
+    {
+      "name": "HEART",
+      "category": "THING",
+      "symbol": "(heart)",
+      "unicode": "2764"
+    },
+    {
+      "name": "BROKEN_HEART",
+      "category": "THING",
+      "symbol": "(bh)",
+      "unicode": "1f494"
+    },
+    {
+      "name": "ANGER",
+      "category": "THING",
+      "symbol": "(anger)",
+      "unicode": "1f4a2"
+    },
+    {
+      "name": "ZAP",
+      "category": "THING",
+      "symbol": "(zap)",
+      "unicode": "26a1"
+    },
+    {
+      "name": "BIOHAZARD",
+      "category": "THING",
+      "symbol": "(biohazard)",
+      "unicode": "2623"
+    },
+    {
+      "name": "UNDER_AGE",
+      "category": "THING",
+      "symbol": "(18)",
+      "unicode": "1f51e"
+    },
+    {
+      "name": "FORBID",
+      "category": "THING",
+      "symbol": "(forbid)",
+      "unicode": "1f232"
+    },
+    {
+      "name": "SECRET",
+      "category": "THING",
+      "symbol": "(secret)",
+      "unicode": "3299"
+    },
+    {
+      "name": "CONGRATULATIONS",
+      "category": "THING",
+      "symbol": "(cong)",
+      "unicode": "3297"
+    },
+    {
+      "name": "HUNDRED",
+      "category": "THING",
+      "symbol": "(100)",
+      "unicode": "1f4af"
+    },
+    {
+      "name": "QUESTION",
+      "category": "THING",
+      "symbol": "(qq)",
+      "unicode": "2753"
+    },
+    {
+      "name": "SUNNY",
+      "category": "THING",
+      "symbol": "(sunny)",
+      "unicode": "1f31e"
+    },
+    {
+      "name": "NEW_MOON",
+      "category": "THING",
+      "symbol": "(moon)",
+      "unicode": "1f319"
+    },
+    {
+      "name": "NEW_STAR",
+      "category": "THING",
+      "symbol": "(star)",
+      "unicode": "2b50"
+    },
+    {
+      "name": "TADA",
+      "category": "THING",
+      "symbol": "(tada)",
+      "unicode": "1f389"
+    },
+    {
+      "name": "CHRISTMAS_TREE",
+      "category": "THING",
+      "symbol": "(tree)",
+      "unicode": "1f384"
+    },
+    {
+      "name": "NEW_ROSE",
+      "category": "THING",
+      "symbol": "(rose)",
+      "unicode": "1f339"
+    },
+    {
+      "name": "POOP",
+      "category": "THING",
+      "symbol": "(poop)",
+      "unicode": "1f4a9"
+    },
+    {
+      "name": "FIRE",
+      "category": "THING",
+      "symbol": "(fire)",
+      "unicode": "1f525"
+    },
+    {
+      "name": "SMOKING",
+      "category": "THING",
+      "symbol": "(smoke)",
+      "unicode": "1f6ac"
+    },
+    {
+      "name": "TELEPHONE_RECEIVER",
+      "category": "THING",
+      "symbol": "(tel)",
+      "unicode": "1f4de"
+    },
+    {
+      "name": "HIGH_HEEL",
+      "category": "THING",
+      "symbol": "(heel)",
+      "unicode": "1f460"
+    },
+    {
+      "name": "BATH",
+      "category": "THING",
+      "symbol": "(bath)",
+      "unicode": "1f6c0"
+    },
+    {
+      "name": "MOTORCYCLE",
+      "category": "THING",
+      "symbol": "(moto)",
+      "unicode": "1f3cd"
+    },
+    {
+      "name": "MONEY_WITH_WINGS",
+      "category": "THING",
+      "symbol": "(money)",
+      "unicode": "1f4b8"
+    },
+    {
+      "name": "DAGGER",
+      "category": "THING",
+      "symbol": "(dagger)",
+      "unicode": "1f5e1"
+    },
+    {
+      "name": "GUN",
+      "category": "THING",
+      "symbol": "(gun)",
+      "unicode": "1f52b"
+    },
+    {
+      "name": "BOMB",
+      "category": "THING",
+      "symbol": "(bomb)",
+      "unicode": "1f4a3"
+    },
+    {
+      "name": "ROTATING_LIGHT",
+      "category": "THING",
+      "symbol": "(red)",
+      "unicode": "1f6a8"
+    },
+    {
+      "name": "SYRINGE",
+      "category": "THING",
+      "symbol": "(syringe)",
+      "unicode": "1f489"
+    },
+    {
+      "name": "LOCK",
+      "category": "THING",
+      "symbol": "(lock)",
+      "unicode": "1f512"
+    },
+    {
+      "name": "ATM",
+      "category": "THING",
+      "symbol": "(atm)",
+      "unicode": "1f3e7"
+    },
+    {
+      "name": "NOTES",
+      "category": "THING",
+      "symbol": "(note)",
+      "unicode": "1f3b6"
+    },
+    {
+      "name": "VIDEO_GAME",
+      "category": "THING",
+      "symbol": "(game)",
+      "unicode": "1f3ae"
+    },
+    {
+      "name": "BALLOT_BOX",
+      "category": "THING",
+      "symbol": "(vote)",
+      "unicode": "1f5f3"
+    },
+    {
+      "name": "END",
+      "category": "THING",
+      "symbol": "(end)",
+      "unicode": "1f51a"
+    },
+    {
+      "name": "SLEEP",
+      "category": "SMILE",
+      "symbol": "(sleep2)",
+      "unicode": "1f62a"
+    },
+    {
+      "name": "ANNOY",
+      "category": "SMILE",
+      "symbol": "(annoy)",
+      "unicode": "1f62b"
+    },
+    {
+      "name": "HUSHED",
+      "category": "SMILE",
+      "symbol": "(hushed)",
+      "unicode": "1f62f"
+    },
+    {
+      "name": "SWEAT2",
+      "category": "SMILE",
+      "symbol": "(sweat2)",
+      "unicode": "1f605"
+    },
+    {
+      "name": "VOID",
+      "category": "SMILE",
+      "symbol": "(void)",
+      "unicode": "1f611"
+    },
+    {
+      "name": "DOWNCAST",
+      "category": "SMILE",
+      "symbol": "(downcast)",
+      "unicode": "1f613"
+    },
+    {
+      "name": "CLOSED",
+      "category": "SMILE",
+      "symbol": "(closed)",
+      "unicode": "1f614"
+    },
+    {
+      "name": "CONFUSED2",
+      "category": "SMILE",
+      "symbol": "(confuse2)",
+      "unicode": "1f625"
+    },
+    {
+      "name": "OO",
+      "category": "SMILE",
+      "symbol": "(00)",
+      "unicode": "1f636"
+    },
+    {
+      "name": "OUCH",
+      "category": "SMILE",
+      "symbol": "(ouch)",
+      "unicode": "1f628"
+    },
+    {
+      "name": "NONO",
+      "category": "SMILE",
+      "symbol": "(nono)",
+      "unicode": "1f627"
+    },
+    {
+      "name": "WHY",
+      "category": "SMILE",
+      "symbol": "(why)",
+      "unicode": "1f629"
+    },
+    {
+      "name": "INVERT",
+      "category": "SMILE",
+      "symbol": "(invert)",
+      "unicode": "1f643"
+    },
+    {
+      "name": "SICK2",
+      "category": "SMILE",
+      "symbol": "(sick2)",
+      "unicode": "1f912"
+    },
+    {
+      "name": "ASK",
+      "category": "SMILE",
+      "symbol": "(ask)",
+      "unicode": "1f647-1f3fb"
+    },
+    {
+      "name": "AGENT",
+      "category": "SMILE",
+      "symbol": "(agent)",
+      "unicode": "1f575-1f3fc"
+    },
+    {
+      "name": "GLASS2",
+      "category": "SMILE",
+      "symbol": "(glass2)",
+      "unicode": "1f913"
+    },
+    {
+      "name": "FEARFUL",
+      "category": "SMILE",
+      "symbol": "(fearful)",
+      "unicode": "1f626"
+    },
+    {
+      "name": "DARK",
+      "category": "SMILE",
+      "symbol": "(dark)",
+      "unicode": "1f31a"
+    },
+    {
+      "name": "DEVIL2",
+      "category": "SMILE",
+      "symbol": "(devil2)",
+      "unicode": "1f47f"
+    },
+    {
+      "name": "ANGEL2",
+      "category": "SMILE",
+      "symbol": "(angel2)",
+      "unicode": "1f47c-1f3fe"
+    },
+    {
+      "name": "HAT",
+      "category": "SMILE",
+      "symbol": "(hat)",
+      "unicode": "1f482-1f3fc"
+    },
+    {
+      "name": "MOUSE",
+      "category": "NATURE",
+      "symbol": "(mouse)",
+      "unicode": "1f400"
+    },
+    {
+      "name": "BEE",
+      "category": "NATURE",
+      "symbol": "(bee)",
+      "unicode": "1f41d"
+    },
+    {
+      "name": "CAT3",
+      "category": "NATURE",
+      "symbol": "(cat3)",
+      "unicode": "1f408"
+    },
+    {
+      "name": "SQUID",
+      "category": "NATURE",
+      "symbol": "(squid)",
+      "unicode": "1f47e"
+    },
+    {
+      "name": "PINGOO",
+      "category": "NATURE",
+      "symbol": "(pingoo)",
+      "unicode": "1f427"
+    },
+    {
+      "name": "SNAILS",
+      "category": "NATURE",
+      "symbol": "(snails)",
+      "unicode": "1f40c"
+    },
+    {
+      "name": "GHOST",
+      "category": "NATURE",
+      "symbol": "(ghost)",
+      "unicode": "1f47b"
+    },
+    {
+      "name": "OCTO",
+      "category": "NATURE",
+      "symbol": "(octo)",
+      "unicode": "1f419"
+    },
+    {
+      "name": "DOG3",
+      "category": "NATURE",
+      "symbol": "(dog3)",
+      "unicode": "1f439"
+    },
+    {
+      "name": "ANGRY3",
+      "category": "NATURE",
+      "symbol": "(angry3)",
+      "unicode": "1f63e"
+    },
+    {
+      "name": "KISS3",
+      "category": "NATURE",
+      "symbol": "(kiss3)",
+      "unicode": "1f63d"
+    },
+    {
+      "name": "CAT_HA",
+      "category": "NATURE",
+      "symbol": "(catcat)",
+      "unicode": "1f638"
+    },
+    {
+      "name": "CORN",
+      "category": "NATURE",
+      "symbol": "(corn2)",
+      "unicode": "1f33d"
+    },
+    {
+      "name": "FISHING",
+      "category": "NATURE",
+      "symbol": "(fishing)",
+      "unicode": "1f3a3"
+    },
+    {
+      "name": "SINGING",
+      "category": "NATURE",
+      "symbol": "(singing)",
+      "unicode": "1f3a4"
+    },
+    {
+      "name": "WALK",
+      "category": "NATURE",
+      "symbol": "(walk)",
+      "unicode": "1f6b6-1f3fb"
+    },
+    {
+      "name": "LIFT",
+      "category": "NATURE",
+      "symbol": "(lift)",
+      "unicode": "1f3cb-1f3fb"
+    },
+    {
+      "name": "RUN",
+      "category": "NATURE",
+      "symbol": "(run)",
+      "unicode": "1f3c3-1f3fb"
+    },
+    {
+      "name": "CYCLING",
+      "category": "NATURE",
+      "symbol": "(cycling)",
+      "unicode": "1f6b4-1f3fb"
+    },
+    {
+      "name": "BOATING",
+      "category": "NATURE",
+      "symbol": "(boating)",
+      "unicode": "1f6a3-1f3fb"
+    },
+    {
+      "name": "DANCER",
+      "category": "NATURE",
+      "symbol": "(dancer)",
+      "unicode": "1f483-1f3fb"
+    },
+    {
+      "name": "TOKITOKI",
+      "category": "THING",
+      "symbol": "(tokitoki)",
+      "unicode": "1f493"
+    },
+    {
+      "name": "HEART3",
+      "category": "THING",
+      "symbol": "(heart3)",
+      "unicode": "1f496"
+    },
+    {
+      "name": "KISS4",
+      "category": "THING",
+      "symbol": "(kiss4)",
+      "unicode": "1f48b"
+    },
+    {
+      "name": "FLOWERS",
+      "category": "THING",
+      "symbol": "(flowers)",
+      "unicode": "1f490"
+    },
+    {
+      "name": "GIFT",
+      "category": "THING",
+      "symbol": "(gift)",
+      "unicode": "1f381"
+    },
+    {
+      "name": "RAINBOW",
+      "category": "THING",
+      "symbol": "(rainbow)",
+      "unicode": "1f308"
+    },
+    {
+      "name": "UMBRA",
+      "category": "THING",
+      "symbol": "(umbra)",
+      "unicode": "1f302"
+    },
+    {
+      "name": "NUKE",
+      "category": "THING",
+      "symbol": "(nuke)",
+      "unicode": "2622"
+    },
+    {
+      "name": "VOLCANO",
+      "category": "THING",
+      "symbol": "(volcano)",
+      "unicode": "1f30b"
+    },
+    {
+      "name": "NOWATER",
+      "category": "THING",
+      "symbol": "(nowater)",
+      "unicode": "1f6b1"
+    },
+    {
+      "name": "BOOOM",
+      "category": "THING",
+      "symbol": "(booom)",
+      "unicode": "1f4a5"
+    },
+    {
+      "name": "SEVENS",
+      "category": "THING",
+      "symbol": "(777)",
+      "unicode": "1f3b0"
+    },
+    {
+      "name": "SHOP",
+      "category": "THING",
+      "symbol": "(shop)",
+      "unicode": "1f3ec"
+    },
+    {
+      "name": "SMALL7",
+      "category": "THING",
+      "symbol": "(small7)",
+      "unicode": "1f3ea"
+    },
+    {
+      "name": "LIGHT",
+      "category": "THING",
+      "symbol": "(light)",
+      "unicode": "1f4a1"
+    },
+    {
+      "name": "ALERT",
+      "category": "THING",
+      "symbol": "(alert)",
+      "unicode": "1f4e2"
+    },
+    {
+      "name": "CARE",
+      "category": "THING",
+      "symbol": "(care)",
+      "unicode": "1f6b8"
+    },
+    {
+      "name": "RICH",
+      "category": "THING",
+      "symbol": "(rich)",
+      "unicode": "1f4b0"
+    },
+    {
+      "name": "IPHONE",
+      "category": "THING",
+      "symbol": "(iphone)",
+      "unicode": "1f4f1"
+    },
+    {
+      "name": "FREEDOM",
+      "category": "THING",
+      "symbol": "(freedom)",
+      "unicode": "1f5fd"
+    },
+    {
+      "name": "LESS",
+      "category": "THING",
+      "symbol": "(less)",
+      "unicode": "1f5ff"
+    },
+    {
+      "name": "CELE",
+      "category": "THING",
+      "symbol": "(cele)",
+      "unicode": "1f38a"
+    },
+    {
+      "name": "CHEER",
+      "category": "THING",
+      "symbol": "(cheer)",
+      "unicode": "1f44f"
+    },
+    {
+      "name": "HIGH",
+      "category": "THING",
+      "symbol": "(high)",
+      "unicode": "1f3a2"
+    },
+    {
+      "name": "SPIRAL",
+      "category": "THING",
+      "symbol": "(spiral)",
+      "unicode": "1f365"
+    },
+    {
+      "name": "CHONG",
+      "category": "THING",
+      "symbol": "(chong)",
+      "unicode": "1f004"
+    },
+    {
+      "name": "KONG",
+      "category": "THING",
+      "symbol": "(kong)",
+      "unicode": "1f233"
+    },
+    {
+      "name": "KE",
+      "category": "THING",
+      "symbol": "(ke)",
+      "unicode": "1f251"
+    },
+    {
+      "name": "MANG",
+      "category": "THING",
+      "symbol": "(mang)",
+      "unicode": "1f235"
+    }
+  ]
+}

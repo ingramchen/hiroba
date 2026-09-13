@@ -1,0 +1,27 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "categories": {
+    "correctness": "off",
+    "suspicious": "off",
+    "pedantic": "off",
+    "style": "off",
+    "restriction": "off",
+    "perf": "off",
+    "nursery": "off"
+  },
+  "rules": {
+    "typescript/no-floating-promises": "error",
+    "typescript/no-misused-promises": "error"
+  },
+  "ignorePatterns": [
+    "art/**",
+    "build/**",
+    "hiroba-server/**",
+    "hiroba-storage/**",
+    "hiroba-transport/**",
+    "hiroba-utils/**",
+    "libs/**",
+    "**/dist/**",
+    "server/drizzle/**"
+  ]
+}

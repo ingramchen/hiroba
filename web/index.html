@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>kekeke 科科科</title>
+    <script src="/config.js"></script>
+  </head>
+  <body>
+    <div id="preload">
+      <style>
+        body {
+          padding: 0;
+          margin: 0;
+          font-family: sans-serif;
+          font-size: small;
+        }
+      </style>
+      <div id="preload-loading">&nbsp;LOADING</div>
+    </div>
+    <div id="app"></div>
+    <script>
+      (function () {
+        var loading = document.getElementById('preload-loading');
+        var pending = -1;
+        function append() {
+          pending = setTimeout(function () {
+            loading.innerHTML += '.';
+            if (loading.innerHTML.length < 200) {
+              append();
+            }
+          }, 1000);
+        }
+        append();
+        window.hirobaClearLoading = function () {
+          clearTimeout(pending);
+          var container = document.getElementById('preload');
+          if (container && container.parentNode) {
+            container.parentNode.removeChild(container);
+          }
+        };
+      })();
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

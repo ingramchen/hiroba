@@ -1,0 +1,23 @@
+Licenses for the images in this directory
+=========================================
+
+pidgin/
+-------
+
+Rendered from the "Default" smiley theme of Pidgin 2.10.12 (theme author
+Hylke Bons), licensed under the GNU General Public License, version 2 or
+later. The full license text and the SVG sources are in the art/ directory of
+this project.
+
+emoji_one/ and category/
+------------------------
+
+Emoji artwork is provided by Emojitwo (https://emojitwo.github.io/),
+originally released as Emojione 2.2 (https://www.emojione.com) by Ranks.com
+(http://www.ranks.com) with contributions from the Emojitwo community and is
+licensed under CC-BY 4.0
+(https://creativecommons.org/licenses/by/4.0/legalcode).
+
+Modified: rendered from SVG to PNG at 24x24 and 48x48 (emoji) and 16x16 and
+32x32 (category icons). The SVG sources are in the art/ directory of this
+project.

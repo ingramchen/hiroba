@@ -1,0 +1,66 @@
+.about-dialog .about-block {
+  max-width: 460px;
+  line-height: 1.6em;
+}
+
+.about-dialog .about-block p {
+  margin: 0 0 4px 0;
+  word-break: break-word;
+}
+
+.about-dialog .about-credits ul {
+  margin: 0;
+  padding-left: 1.5em;
+}
+
+.about-dialog .about-credits li {
+  margin-bottom: 2px;
+}
+
+.about-dialog .about-credits-title {
+  font-weight: bold;
+}
+
+.about-dialog .about-block a,
+.faq-dialog .faq-content a {
+  color: var(--kmark-link);
+}
+
+.faq-dialog .faq-content {
+  width: min(680px, 80vw);
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 6px;
+  line-height: 1.6em;
+}
+
+.faq-dialog .faq-content h1 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+
+.faq-dialog .faq-content h3 {
+  margin: 16px 0 6px 0;
+  font-size: 15px;
+}
+
+.faq-dialog .faq-content p {
+  margin: 0 0 8px 0;
+  word-break: break-word;
+}
+
+.faq-dialog .faq-content ul {
+  margin: 0 0 8px 0;
+  padding-left: 1.5em;
+}
+
+.faq-dialog .faq-content img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.GlobalCssResource-footer a {
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}

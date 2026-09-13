@@ -1,0 +1,111 @@
+{
+  "alice": {
+    "frames": [
+      {
+        "t": "ready",
+        "v": 1,
+        "topic": "golden",
+        "publicId": "alice",
+        "colorToken": null,
+        "serverTime": "<time>",
+        "crowd": 1,
+        "history": []
+      },
+      {
+        "t": "crowd",
+        "crowd": 1
+      },
+      {
+        "t": "pong",
+        "serverTime": "<time>"
+      },
+      {
+        "t": "crowd",
+        "crowd": 2
+      },
+      {
+        "t": "pong",
+        "serverTime": "<time>"
+      },
+      {
+        "t": "event",
+        "event": {
+          "eventType": "CHAT_MESSAGE",
+          "senderPublicId": "alice",
+          "senderNickName": "Alice",
+          "senderColorToken": null,
+          "anchorUsername": "",
+          "content": "hello square",
+          "date": "<time>"
+        }
+      },
+      {
+        "t": "pong",
+        "serverTime": "<time>"
+      },
+      {
+        "t": "event",
+        "event": {
+          "eventType": "CHAT_MESSAGE",
+          "senderPublicId": "alice",
+          "senderNickName": "Alice2",
+          "senderColorToken": null,
+          "anchorUsername": "",
+          "content": "renamed",
+          "date": "<time>"
+        }
+      },
+      {
+        "t": "pong",
+        "serverTime": "<time>"
+      }
+    ],
+    "closeCode": null
+  },
+  "bob": {
+    "frames": [
+      {
+        "t": "ready",
+        "v": 1,
+        "topic": "golden",
+        "publicId": "bob",
+        "colorToken": null,
+        "serverTime": "<time>",
+        "crowd": 2,
+        "history": []
+      },
+      {
+        "t": "crowd",
+        "crowd": 2
+      },
+      {
+        "t": "pong",
+        "serverTime": "<time>"
+      },
+      {
+        "t": "error",
+        "code": "FORBIDDEN",
+        "fatal": false
+      },
+      {
+        "t": "pong",
+        "serverTime": "<time>"
+      },
+      {
+        "t": "pong",
+        "serverTime": "<time>"
+      }
+    ],
+    "closeCode": null
+  },
+  "rejected": {
+    "frames": [
+      {
+        "t": "error",
+        "code": "PROTOCOL_VERSION",
+        "fatal": true
+      }
+    ],
+    "closeCode": 1008
+  }
+}

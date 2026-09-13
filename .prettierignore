@@ -1,0 +1,13 @@
+art/
+build/
+node_modules/
+pnpm-lock.yaml
+**/dist/
+server/drizzle/
+web/dist/
+README.md
+DEVELOPMENT.md
+LICENSE
+docker-compose.yml
+web/src/assets/gwt-standard/
+web/src/faq/faq.md

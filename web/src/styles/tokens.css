@@ -1,0 +1,57 @@
+:root {
+  --gray-ff: #ffffff;
+  --gray-f0: #f0f0f0;
+  --gray-ee: #eeeeee;
+  --gray-aa: #aaaaaa;
+  --gray-bb: #bbbbbb;
+  --gray-88: #888888;
+  --gray-33: #333333;
+
+  --dark-red: #90001e;
+  --light-red: #f6e4ea;
+  --red: #cc0000;
+
+  --dark-green: #2b8f00;
+  --light-green: #eaf6e5;
+  --green: #9caa3b;
+
+  --dark-blue: #002590;
+  --light-blue: #e8eef5;
+  --blue: #0c4a8a;
+
+  --dark-yellow: #926f04;
+  --light-yellow: #f6efe4;
+
+  --orange: #fd7c13;
+
+  --reply-to-me: #fdfdba;
+  --action-dialog-bg: #ffffaa;
+  --forbidden-area: #ffaaaa;
+  --nsfw-youtube-mask: #fff5f5;
+  --moderation-pending-ring: #9aa0a6;
+  --moderation-flag-ring: #e08a00;
+  --moderation-error-ring: #6b5bb5;
+  --media-flow-title: #6e7f94;
+  --wash-guard-bg: red;
+  --vote-reason: grey;
+
+  --right-panel-title-font-size: 20px;
+  --message-input-field-width: 422px;
+
+  --kmark: #333;
+  --kmark-light: #555;
+  --kmark-lighter: #999;
+  --kmark-lightest: #f0f0f0;
+  --kmark-link: #4e96e0;
+
+  --padding-vertical: 6px;
+  --padding-horizontal: 12px;
+  --padding-sm-vertical: 5px;
+  --padding-sm-horizontal: 10px;
+  --padding-xs-vertical: 1px;
+  --padding-xs-horizontal: 5px;
+  --padding-lg-vertical: 0.3em;
+
+  --border-radius: 4px;
+  --border-radius-sm: 2px;
+}

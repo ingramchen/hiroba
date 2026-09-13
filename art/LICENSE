@@ -1,0 +1,54 @@
+Licenses for the artwork in this directory
+==========================================
+
+The source code of this project is under the MIT License (see ../LICENSE).
+The artwork below is not; each set keeps the license of its upstream, and the
+sets are aggregated here, not merged into a single work.
+
+pidgin-2.10.12-pixmaps/
+-----------------------
+
+The "Default" smiley theme from Pidgin 2.10.12 (theme author Hylke Bons).
+Licensed under the GNU General Public License, version 2 or later; the full
+text is in COPYING.
+
+The 24x24 PNG files under
+../hiroba-server/src/main/webapp/com.liquable.hiroba/emoji/pidgin/ are
+rendered from the SVG files in pidgin-2.10.12-pixmaps/emotes/default/24/
+scalable/ and are distributed under the same license.
+
+emoji_one_2016_01_29_svg/ and emoji_one_category_icons/
+------------------------------------------------------
+
+Emoji artwork is provided by Emojitwo (https://emojitwo.github.io/),
+originally released as Emojione 2.2 (https://www.emojione.com) by Ranks.com
+(http://www.ranks.com) with contributions from the Emojitwo community and is
+licensed under CC-BY 4.0
+(https://creativecommons.org/licenses/by/4.0/legalcode).
+
+Modified: the SVG files were rendered to 24x24 and 48x48 PNG (emoji) and to
+16x16 and 32x32 PNG (category icons). The rendered files are under
+../hiroba-server/src/main/webapp/com.liquable.hiroba/emoji/emoji_one/ and
+.../emoji/category/ and are distributed under the same license.
+
+image_work/
+-----------
+
+Working files for the interface icons in
+../hiroba-transport/src/main/java/com/liquable/hiroba/gwt/client/res/img/.
+
+media-playback-start.svg is from the Tango Icon Theme, by Lapo Calamandrei
+with Jakub Steiner, released into the public domain. media-playback-start.png,
+down.png and up.png are derived from it, and down.png and up.png are also
+shipped in the res/img directory named above.
+
+gnome_window_close.png is the window-close icon of the GNOME icon theme. The
+icon ships only in the 3.x releases of that theme, whose COPYING reads: "GNOME
+icon theme is distributed under the terms of either GNU LGPL v.3 or Creative
+Commons BY-SA 3.0 license."
+(https://www.gnu.org/licenses/lgpl-3.0.html,
+https://creativecommons.org/licenses/by-sa/3.0/). The file carries no embedded
+metadata, so the release it came from is not recorded. This project uses it
+under CC BY-SA 3.0. deleteMedia.png and deleteMediaSelf.png are derived from it,
+are shipped in the res/img directory named above, and are distributed under
+CC BY-SA 3.0 as well.

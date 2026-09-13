@@ -1,0 +1,18 @@
+{
+  "forbid": [
+    "{\"t\":\"event\",\"event\":{\"eventType\":\"FORBID_MESSAGE\",\"senderPublicId\":\"SYSTEM_PUBLIC_ID\",\"senderNickName\":\"SYSTEM\",\"senderColorToken\":null,\"anchorUsername\":\"\",\"content\":\"anchor\",\"date\":4242,\"payload\":{\"senderName\":\"anchor\",\"unforbid\":false,\"publicIds\":[\"<id-0>\"],\"chatters\":[{\"publicId\":\"<id-0>\",\"nickname\":\"nick\",\"colorToken\":null}]}}}"
+  ],
+  "unforbid": [
+    "{\"t\":\"event\",\"event\":{\"eventType\":\"FORBID_MESSAGE\",\"senderPublicId\":\"SYSTEM_PUBLIC_ID\",\"senderNickName\":\"SYSTEM\",\"senderColorToken\":null,\"anchorUsername\":\"\",\"content\":\"anchor\",\"date\":4242,\"payload\":{\"senderName\":\"anchor\",\"unforbid\":false,\"publicIds\":[\"<id-0>\"],\"chatters\":[{\"publicId\":\"<id-0>\",\"nickname\":\"nick\",\"colorToken\":null}]}}}",
+    "{\"t\":\"event\",\"event\":{\"eventType\":\"FORBID_MESSAGE\",\"senderPublicId\":\"SYSTEM_PUBLIC_ID\",\"senderNickName\":\"SYSTEM\",\"senderColorToken\":null,\"anchorUsername\":\"\",\"content\":\"anchor\",\"date\":4343,\"payload\":{\"senderName\":\"anchor\",\"unforbid\":true,\"publicIds\":[\"<id-0>\"],\"chatters\":[{\"publicId\":\"<id-0>\",\"nickname\":\"nick\",\"colorToken\":null}]}}}"
+  ],
+  "burn": [
+    "{\"t\":\"event\",\"event\":{\"eventType\":\"BURN_MESSAGE\",\"senderPublicId\":\"SYSTEM_PUBLIC_ID\",\"senderNickName\":\"SYSTEM\",\"senderColorToken\":null,\"anchorUsername\":\"\",\"content\":\"mob\",\"date\":4242,\"payload\":{\"senderName\":\"mob\",\"targetPublicId\":\"<id-0>\",\"targetNickname\":\"nick\",\"kerma\":20}}}"
+  ],
+  "minKerma": [
+    "{\"t\":\"event\",\"event\":{\"eventType\":\"MIN_SQUARE_KERMA_MESSAGE\",\"senderPublicId\":\"SYSTEM_PUBLIC_ID\",\"senderNickName\":\"SYSTEM\",\"senderColorToken\":null,\"anchorUsername\":\"\",\"content\":\"30\",\"date\":4242,\"payload\":{\"minKermaValue\":30}}}"
+  ],
+  "poster": [
+    "{\"t\":\"event\",\"event\":{\"eventType\":\"POSTER_MESSAGE\",\"senderPublicId\":\"SYSTEM_PUBLIC_ID\",\"senderNickName\":\"SYSTEM\",\"senderColorToken\":null,\"anchorUsername\":\"\",\"content\":\"hello\",\"date\":4242,\"payload\":{\"poster\":{\"id\":\"poster-1\",\"topic\":\"golden\",\"creator\":{\"publicId\":\"creator\",\"nickname\":\"nick\",\"colorToken\":null},\"mediaUrl\":\"https://example.invalid/p.png\",\"posterType\":\"IMAGE\",\"content\":\"hello\",\"createTime\":1000}}}}"
+  ]
+}

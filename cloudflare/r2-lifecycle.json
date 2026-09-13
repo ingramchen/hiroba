@@ -1,0 +1,16 @@
+{
+  "rules": [
+    {
+      "id": "expire-t",
+      "enabled": true,
+      "conditions": { "prefix": "t/" },
+      "deleteObjectsTransition": { "condition": { "type": "Age", "maxAge": 604800 } }
+    },
+    {
+      "id": "expire-m",
+      "enabled": true,
+      "conditions": { "prefix": "m/" },
+      "deleteObjectsTransition": { "condition": { "type": "Age", "maxAge": 3024000 } }
+    }
+  ]
+}

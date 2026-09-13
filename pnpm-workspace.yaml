@@ -1,0 +1,11 @@
+packages:
+  - shared
+  - server
+  - web
+allowBuilds:
+  better-sqlite3: false
+  esbuild: true
+  workerd: true
+minimumReleaseAgeExclude:
+  - hono@4.13.7
+  - miniflare@5.20260910.0-alpha

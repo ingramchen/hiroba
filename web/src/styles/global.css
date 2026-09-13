@@ -1,0 +1,228 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+html.platform-windows body .GlobalCssResource-zhFont,
+html.platform-windows .GlobalCssResource-zhFont table td,
+html.platform-windows table.GlobalCssResource-zhFont td,
+html.platform-windows table td.GlobalCssResource-zhFont,
+html.platform-windows .GlobalCssResource-zhFont select,
+html.platform-windows select.GlobalCssResource-zhFont {
+  font-family: 'Microsoft JhengHei', sans-serif;
+}
+
+html.platform-windows body,
+html.platform-windows table td,
+html.platform-windows select {
+  font-family: 'Arial Unicode MS', Arial, sans-serif;
+}
+
+html.platform-windows pre {
+  font-family: 'courier new', courier;
+}
+
+html:not(.platform-windows) pre {
+  font-family: monospace;
+}
+
+html:not(.platform-windows) body,
+html:not(.platform-windows) table td,
+html:not(.platform-windows) select {
+  font-family: sans-serif;
+}
+
+.GlobalCssResource-statusPanel > table [role='menuitem'] {
+  white-space: nowrap;
+  font-weight: normal;
+}
+
+.GlobalCssResource-statusPanel {
+  line-height: 2em;
+}
+
+td {
+  vertical-align: top;
+  text-align: left;
+}
+
+td[align='right'] {
+  text-align: right;
+}
+
+.GlobalCssResource-noOfCrowd {
+  text-align: center;
+}
+
+.GlobalCssResource-colorNickname {
+  font-weight: bold;
+}
+
+.GlobalCssResource-colorNickname > span {
+  font-weight: normal;
+  font-size: 80%;
+  padding-left: 5px;
+}
+
+.GlobalCssResource-footer {
+  color: var(--gray-88);
+  background: var(--gray-f0);
+  padding: 5px;
+}
+
+input[type='text'],
+textarea {
+  border: 1px solid var(--gray-aa);
+  box-sizing: border-box;
+}
+
+a.GlobalCssResource-external {
+  text-decoration: underline;
+}
+
+a,
+a:visited {
+  color: var(--blue);
+}
+
+a:hover {
+  color: var(--red);
+  text-decoration: none;
+}
+
+.GlobalCssResource-failStopContent {
+  color: var(--red);
+}
+
+.GlobalCssResource-successMessage {
+  background: var(--light-green);
+  font-size: 110%;
+  color: var(--dark-green);
+  font-weight: bold;
+}
+
+.GlobalCssResource-failureMessage {
+  background: var(--light-red);
+  font-size: 110%;
+  color: var(--red);
+  font-weight: bold;
+}
+
+.GlobalCssResource-upgradeBrowser {
+  font-size: 40px;
+  margin: 10px;
+}
+
+.GlobalCssResource-upgradeBrowser p {
+  margin: 10px;
+}
+
+.GlobalCssResource-upgradeBrowser a {
+  display: block;
+  margin: 10px;
+}
+
+img.GlobalCssResource-img32 {
+  width: 32px;
+  height: 32px;
+}
+
+img.GlobalCssResource-img24 {
+  width: 24px;
+  height: 24px;
+}
+
+img.GlobalCssResource-img16 {
+  width: 16px;
+  height: 16px;
+}
+
+img.GlobalCssResource-smiley {
+  vertical-align: text-bottom;
+  width: 24px;
+  height: 24px;
+}
+
+img.GlobalCssResource-smileyCategory {
+  width: 16px;
+  height: 16px;
+}
+
+.GlobalCssResource-alertDialog {
+  max-width: 300px;
+  min-width: 200px;
+}
+
+.GlobalCssResource-alertDialogContent {
+  padding: 10px;
+}
+
+.GlobalCssResource-alertDialogControls {
+  text-align: right;
+  padding: 10px;
+}
+
+.GlobalCssResource-alertDialogControls button {
+  margin-left: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.gwt-DisclosurePanel .header,
+.gwt-DisclosurePanel .header * {
+  font-size: small;
+}
+
+body:is(.shape-responsive, .shape-compact) .GlobalCssResource-statusPanel.gwt-MenuBar table,
+body:is(.shape-responsive, .shape-compact) .GlobalCssResource-statusPanel.gwt-MenuBar table > tbody,
+body:is(.shape-responsive, .shape-compact)
+  .GlobalCssResource-statusPanel.gwt-MenuBar
+  table
+  > tbody
+  > tr {
+  display: block !important;
+}
+
+body:is(.shape-responsive, .shape-compact) .GlobalCssResource-statusPanel.gwt-MenuBar table td {
+  display: inline-block !important;
+  line-height: 2em;
+}
+
+body:is(.shape-responsive, .shape-compact) .GlobalCssResource-statusPanel .gwt-MenuItemSeparator {
+  height: 2em;
+}
+
+.gwt-TabBar .gwt-TabBarFirst {
+  width: 0;
+}
+
+.gwt-TabBar .gwt-TabBarItem,
+.gwt-TabBar .gwt-TabBarItem:active {
+  margin-left: 0;
+  background: var(--gray-ee);
+  color: var(--gray-88);
+  border: 1px solid var(--gray-bb);
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0;
+  padding: 3px 10px;
+}
+
+.gwt-TabBar .gwt-TabBarItem-selected {
+  background: var(--gray-ff);
+  color: black;
+}
+
+.gwt-TabBar .gwt-TabBarItem-selected:focus {
+  outline: none;
+}
+
+.gwt-TabPanelBottom {
+  padding: 0;
+  border: 1px solid var(--gray-aa);
+}
+
+.gwt-RadioButton > input[type='radio'],
+.gwt-CheckBox > input[type='checkbox'] {
+  margin-right: 8px;
+}

@@ -1,0 +1,17 @@
+Licenses for the files in this directory
+========================================
+
+standard.css and images/
+------------------------
+
+The "Standard" widget theme of GWT (Google Web Toolkit) 2.8.2, Copyright
+Google Inc., licensed under the Apache License, Version 2.0:
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+standard.css is the stylesheet emitted by the GWT compiler for that theme;
+images/ holds its four sprite sheets (corner.png, hborder.png, vborder.png,
+splitPanelThumb.png), copied unmodified.
+
+Modified: the url() references in standard.css are unchanged, and the file is
+otherwise byte-identical to the compiler output.

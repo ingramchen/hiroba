@@ -1,0 +1,141 @@
+body.mirror-crop {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mirror-crop .SquareCssResource-dockPanel {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mirror-first .SquareCssResource-dockPanel {
+  transition: 6s;
+  transform-origin: center;
+  transform: scale(0.8);
+}
+
+.mirror-first-rev .SquareCssResource-dockPanel {
+  transition: 6s;
+  transform-origin: center;
+  transform: scaleX(-0.8) scaleY(0.8);
+}
+
+.mirror-unreversing .SquareCssResource-dockPanel {
+  transform: scaleX(-1) scaleY(1);
+}
+
+.mirror-second .SquareCssResource-dockPanel {
+  transition: 1s;
+  transform-origin: center;
+  transform: scale(5);
+  transition-timing-function: ease-out;
+  opacity: 0;
+}
+
+.mirror-second-rev .SquareCssResource-dockPanel {
+  transition: 1s;
+  transform-origin: center;
+  transform: scaleX(-5) scaleY(5);
+  transition-timing-function: ease-out;
+  opacity: 0;
+}
+
+.mirror-third .SquareCssResource-dockPanel {
+  transform: scaleX(0) scaleY(0);
+}
+
+.mirror-fourth .SquareCssResource-dockPanel {
+  transition: 0.5s;
+  transform-origin: center;
+  transform: scaleX(-1) scaleY(1);
+  transition-timing-function: ease-in;
+}
+
+.mirror-fourth-rev .SquareCssResource-dockPanel {
+  transition: 0.5s;
+  transform-origin: center;
+  transform: scaleX(1) scaleY(1);
+  transition-timing-function: ease-in;
+}
+
+.mirror-reversed {
+  transform: scaleX(-1) scaleY(1) !important;
+}
+
+.mirror-hidden {
+  display: none !important;
+}
+
+.mirror-star,
+.mirror-stars {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.mirror-stars {
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: zoom 5s infinite;
+  opacity: 0;
+}
+
+.mirror-stars:nth-child(1) {
+  background-position: 50% 50%;
+  animation-delay: 0s;
+}
+
+.mirror-stars:nth-child(2) {
+  background-position: 20% 60%;
+  animation-delay: 1s;
+}
+
+.mirror-stars:nth-child(3) {
+  background-position: -20% -30%;
+  animation-delay: 2s;
+}
+
+.mirror-stars:nth-child(4) {
+  background-position: 40% -80%;
+  animation-delay: 3s;
+}
+
+.mirror-stars:nth-child(5) {
+  background-position: -20% 30%;
+  animation-delay: 4s;
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    animation-timing-function: ease-in;
+  }
+  85% {
+    opacity: 1;
+    transform: scale(2.8);
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3.5);
+  }
+}
+
+.mirror-star {
+  background: #000;
+  z-index: -100;
+}

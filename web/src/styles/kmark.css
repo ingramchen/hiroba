@@ -1,0 +1,76 @@
+.KmarkCssResource-kmark {
+  line-height: 1.5em;
+  color: var(--kmark);
+}
+
+.KmarkCssResource-kmark p,
+.KmarkCssResource-kmark ol,
+.KmarkCssResource-kmark ul {
+  margin: var(--padding-lg-vertical) 0;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.KmarkCssResource-kmark ol,
+.KmarkCssResource-kmark ul {
+  padding-left: 2em;
+}
+
+.KmarkCssResource-kmark a {
+  color: var(--kmark-link);
+}
+
+.KmarkCssResource-kmark blockquote {
+  margin: var(--padding-lg-vertical) 0;
+  padding-left: var(--padding-sm-vertical);
+  border-left: 2px solid var(--kmark-lighter);
+  color: var(--kmark-light);
+}
+
+.KmarkCssResource-kmark code {
+  font-size: 13px;
+}
+
+.KmarkCssResource-kmark code,
+.KmarkCssResource-kmark pre {
+  background-color: var(--kmark-lightest);
+  padding-left: var(--padding-xs-horizontal);
+  padding-right: var(--padding-xs-horizontal);
+  border-radius: var(--border-radius-sm);
+}
+
+.KmarkCssResource-kmark pre {
+  border: 1px solid var(--kmark-lightest);
+  margin-top: var(--padding-lg-vertical);
+  margin-bottom: var(--padding-lg-vertical);
+  padding-top: var(--padding-sm-vertical);
+  padding-bottom: var(--padding-sm-vertical);
+}
+
+.KmarkCssResource-kmark pre > code {
+  padding: 0;
+}
+
+.KmarkCssResource-kmark .reference-link-index {
+  display: none;
+}
+
+.KmarkCssResource-kmarkHelp pre {
+  background-color: var(--kmark-lightest);
+}
+
+.KmarkCssResource-kmarkHelp code {
+  font-size: 13px;
+}
+
+.KmarkCssResource-kmarkHelp ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  body:is(.shape-responsive, .shape-compact) .KmarkCssResource-kmark ol,
+  body:is(.shape-responsive, .shape-compact) .KmarkCssResource-kmark ul {
+    padding-left: 1.5em;
+  }
+}

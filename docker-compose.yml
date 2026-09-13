@@ -1,0 +1,82 @@
+services:
+  minio:
+    image: minio/minio
+    command: server /data --console-address :9001
+    environment:
+      MINIO_ROOT_USER: ${S3_ACCESS_KEY:-hirobaminio}
+      MINIO_ROOT_PASSWORD: ${S3_SECRET_KEY:-hirobaminio}
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio-data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 5s
+      timeout: 5s
+      retries: 40
+
+  minio-init:
+    image: minio/mc
+    depends_on:
+      minio:
+        condition: service_healthy
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        mc alias set local http://minio:9000 ${S3_ACCESS_KEY:-hirobaminio} ${S3_SECRET_KEY:-hirobaminio}
+        for bucket in ${S3_BUCKET_IMG:-hiroba-img} ${S3_BUCKET_C:-hiroba-c} ${S3_BUCKET_V:-hiroba-v}; do
+          mc mb --ignore-existing local/$$bucket
+          mc anonymous set download local/$$bucket
+        done
+
+  app:
+    build: .
+    depends_on:
+      minio-init:
+        condition: service_completed_successfully
+    environment:
+      PORT: 3000
+      DB_PATH: /data/hiroba.sqlite
+      TOKEN_SECRET: ${TOKEN_SECRET:?set TOKEN_SECRET in .env, see .env.example}
+      WEB_LOADER_KEY: ${WEB_LOADER_KEY:-hiroba-dev-web-loader-key}
+      SYS_PASSWORD: ${SYS_PASSWORD:-hiroba-dev-sys-password}
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-}
+      IMGMOD_URL: ${IMGMOD_URL:-}
+      IMGMOD_TOKEN: ${IMGMOD_TOKEN:-}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      DEV_LOGIN: ${DEV_LOGIN:-}
+      # the image sets NODE_ENV=production, under which DEV_LOGIN is ignored;
+      # a development compose overrides it here (see .env.example)
+      NODE_ENV: ${NODE_ENV:-production}
+      WEB_LOADER_HOSTS: ${WEB_LOADER_HOSTS:-}
+      WEB_LOADER_CACHE_PATH: ${WEB_LOADER_CACHE_PATH:-/data/web-loader-cache}
+      SCHEDULE_TIME_ZONE: ${SCHEDULE_TIME_ZONE:-Asia/Taipei}
+      TRUST_PROXY: ${TRUST_PROXY:-0}
+      S3_ENDPOINT: ${S3_ENDPOINT:-http://minio:9000}
+      S3_REGION: ${S3_REGION:-}
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY:-hirobaminio}
+      S3_SECRET_KEY: ${S3_SECRET_KEY:-hirobaminio}
+      UPLOAD_LIMIT_MB: ${UPLOAD_LIMIT_MB:-}
+      S3_BUCKET_IMG: ${S3_BUCKET_IMG:-hiroba-img}
+      S3_BUCKET_C: ${S3_BUCKET_C:-hiroba-c}
+      S3_BUCKET_V: ${S3_BUCKET_V:-hiroba-v}
+      TZ: Asia/Taipei
+    ports:
+      - "3000:3000"
+    volumes:
+      - app-data:/data
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://localhost:3000/healthz').then(r=>process.exit(r.ok?0:1),()=>process.exit(1))"
+      interval: 10s
+      timeout: 5s
+      retries: 40
+
+volumes:
+  minio-data:
+  app-data:

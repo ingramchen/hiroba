@@ -1,0 +1,4 @@
+.git
+art
+**/node_modules
+**/dist

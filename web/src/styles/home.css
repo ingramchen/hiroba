@@ -1,0 +1,73 @@
+.HomeCssResource-homeHeader {
+  background: var(--gray-ff);
+  color: var(--blue);
+  white-space: nowrap;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.HomeCssResource-homeHeader .HomeCssResource-logo {
+  padding-left: 5px;
+  margin-right: 5px;
+}
+
+.HomeCssResource-homeHeader input {
+  padding-left: 5px;
+  font-size: 40px;
+  margin-top: 3px;
+  height: 53px;
+}
+
+.HomeCssResource-homeHeader .GlobalCssResource-colorBox {
+  margin: auto 10px;
+}
+
+.HomeCssResource-homeHeader .GlobalCssResource-colorBox .GlobalCssResource-noOfCrowd {
+  font-size: 40px;
+  padding: 10px;
+  min-width: 1.5em;
+}
+
+.HomeCssResource-createSquare .HomeCssResource-topicBox {
+  width: 200px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.HomeCssResource-createSquare .GlobalCssResource-colorBox {
+  padding: 10px;
+}
+
+.HomeCssResource-rightPanel {
+  border-left: 1px solid var(--gray-aa);
+}
+
+.HomeCssResource-topics .HomeCssResource-title {
+  font-size: 45px;
+  color: var(--orange);
+}
+
+.HomeCssResource-topics {
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.HomeCssResource-topics .GlobalCssResource-colorBox {
+  margin: 0 10px 0 0;
+}
+
+.HomeCssResource-topics .GlobalCssResource-colorBox .GlobalCssResource-noOfCrowd {
+  font-size: 23px;
+  padding: 0.5em 0.3em;
+  font-family: sans-serif;
+  min-width: 1.6em;
+}
+
+.HomeCssResource-topics .HomeCssResource-topicLink a {
+  font-size: 16px;
+}
+
+.HomeCssResource-topics .HomeCssResource-chatMessage {
+  color: var(--gray-88);
+}

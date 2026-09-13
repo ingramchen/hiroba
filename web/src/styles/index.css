@@ -1,0 +1,12 @@
+/* Root/body class contract:
+   html.platform-windows   Windows font stack
+   body.shape-responsive | body.shape-desktop | body.shape-compact
+   body.page-square        square page scope */
+@import '../assets/gwt-standard/standard.css';
+@import './tokens.css';
+@import './global.css';
+@import './home.css';
+@import './square.css';
+@import './kmark.css';
+@import './mirror.css';
+@import './info.css';

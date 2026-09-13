@@ -1,0 +1,47 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "hiroba",
+  "main": "./server/src/adapters/cf/worker.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./web/dist",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "APP",
+        "class_name": "AppDO"
+      },
+      {
+        "name": "SQUARE",
+        "class_name": "SquareDO"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["AppDO", "SquareDO"]
+    }
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "NODE_ENV": "production",
+    "S3_ENDPOINT": "https://ACCOUNT_ID.r2.cloudflarestorage.com",
+    "S3_REGION": "auto",
+    "S3_BUCKET_IMG": "hiroba-img",
+    "S3_BUCKET_C": "hiroba-c",
+    "S3_BUCKET_V": "hiroba-v",
+    "S3_BUCKET_CACHE": "hiroba-cache",
+    "WEB_LOADER_HOSTS": "",
+    "PUBLIC_ORIGIN": "",
+    "FLAKE_NODE_ID": "1",
+    "SCHEDULE_TIME_ZONE": "UTC"
+  }
+}

@@ -1,0 +1,17 @@
+# Copy to .dev.vars for `wrangler dev`. On a real deployment these are secrets,
+# set with `wrangler secret put <NAME>` instead; .dev.vars is local only.
+# wrangler.json declares NODE_ENV=production so a DEPLOYED worker is production
+# shaped (dev login closed, the naive reference classifier never mounted).
+# .dev.vars overrides those vars, so a local `wrangler dev` needs this line back
+# or it runs production shaped too.
+NODE_ENV=development
+TOKEN_SECRET=hiroba-dev-token-secret
+SYS_PASSWORD=hiroba-dev-sys-password
+WEB_LOADER_KEY=hiroba-dev-web-loader-key
+S3_ACCESS_KEY=hirobaminio
+S3_SECRET_KEY=hirobaminio
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+# point `wrangler dev` at a local S3 compatible server rather than R2
+S3_ENDPOINT=http://127.0.0.1:9000
+S3_REGION=us-east-1

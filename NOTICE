@@ -1,0 +1,25 @@
+hiroba
+
+"kekeke" and "kekeke.cc" are the name and trademark of the site at kekeke.cc.
+This project is an independent re-implementation of that site's public
+behaviour. It is not affiliated with, operated by, or endorsed by kekeke.cc.
+
+Third-party material carried under its own licence:
+
+This product includes software developed as part of txtmark
+(https://github.com/rjeschke/txtmark), Copyright (C) 2011 René Jeschke,
+licensed under the Apache License, Version 2.0. `shared/src/kmark.ts` is a
+port of that work.
+
+This product includes the GWT "Standard" widget theme stylesheet and sprite
+sheets in `web/src/assets/gwt-standard/`, Copyright Google Inc., licensed
+under the Apache License, Version 2.0.
+
+Emoji artwork is provided by Emojitwo (https://emojitwo.github.io/),
+originally released as Emojione 2.2 by Ranks.com with contributions from the
+Emojitwo community, licensed under CC-BY 4.0. See `art/LICENSE` and
+`web/public/-/emoji/LICENSE`.
+
+The legacy smileys are the "Default" theme of Pidgin 2.10.12, licensed under
+the GNU General Public License, version 2 or later (`art/COPYING`). They are
+aggregated with, not merged into, the rest of this work.

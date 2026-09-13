@@ -1,0 +1,1 @@
+ALTER TABLE `square_info` ADD `thumb_source_path` text;
