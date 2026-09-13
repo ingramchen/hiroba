@@ -2,10 +2,11 @@
 
 ## Configuration
 
-The server keeps its state in a SQLite file rather than a database server.
-Copy `.env.example` to `.env` and edit it; the compose file supplies
-development defaults for everything except `TOKEN_SECRET`, which has to come
-from `.env`.
+The server keeps its state in a SQLite file rather than a database server, and
+it reads its settings from the environment only. `.env` is read by `docker
+compose`, which turns it into that environment and supplies development
+defaults for everything except `TOKEN_SECRET`; a server started by hand gets
+nothing from `.env` and needs every variable exported.
 
 One domain and a set of S3 compatible credentials are the whole deployment:
 the server puts uploads in the buckets and serves them back itself, under
@@ -14,33 +15,41 @@ site's own origin. Whether an image belongs to the site — which is what decide
 that a square thumbnail may be built from it — is read off that base, nothing
 else.
 
-Uploads expire without any configuration:
-objects under `t/` in each bucket (uploaded images and videos) are deleted
-seven days after they were stored, objects under `m/` (poster images) after
-thirty-five days. The server sweeps the three buckets by prefix once after it
-starts and then every hour, a bounded number of objects per run, and never
-touches a key outside those two prefixes; square thumbnails (`thumb_…`) and
-anything else in the buckets stay. A sweep that cannot reach the storage is
-logged and retried on the next hour.
+Uploads expire the way the original buckets did: objects under `t/` in each
+bucket (uploaded images and videos) are meant to go seven days after they were
+stored, objects under `m/` (poster images) after thirty-five days. Nothing in
+the server deletes an expired object; the bucket's lifecycle rules do, so set
+them on each bucket (MinIO: `mc ilm import`; on Cloudflare the deploy script
+sets them, see `cloudflare/README.md`). Without the rules nothing fails and
+nothing is logged; the objects simply stay. Square thumbnails (`t/thumb_…`) are
+one-week objects like any other upload and are also deleted with their picture.
+
+The shipped compose file is one of the places without them: its `minio-init`
+service creates the buckets and sets no lifecycle rules, so a deployment built
+on it has to add them itself: `cloudflare/minio-lifecycle.json` holds the two
+rules in MinIO's import format, so `mc ilm import local/hiroba-img <
+cloudflare/minio-lifecycle.json` (and again for `hiroba-c` and `hiroba-v`)
+is enough. They are the same prefix-and-age entries the
+`cloudflare/r2-lifecycle*.json` files carry for R2.
 
 | Variable | Required | Default | Meaning |
 | --- | --- | --- | --- |
-| `TOKEN_SECRET` | yes | none | signs account and chatter tokens; compose has no default for it |
+| `TOKEN_SECRET` | yes | none | signs account and chatter tokens; compose has no default for it either |
 | `PORT` | no | `3000` | port to listen on |
 | `DB_PATH` | no | `./hiroba.sqlite` | the SQLite file; the image sets `/data/hiroba.sqlite`, on a volume. Set but blank refuses to start (a blank line in `.env` must not silently move the data). The database is opened in WAL mode, so `-wal` and `-shm` files appear beside it |
 | `WEB_DIST` | no | `public` | directory the built client is served from; relative paths resolve against the server package |
 | `TRUST_PROXY` | no | `0` | how many right-hand entries of `X-Forwarded-For` were written by proxies you run. `0` trusts none and identifies a visitor by the connecting socket address; behind one reverse proxy set `1`. Set too low every visitor looks like one address, and a single forbid then covers the whole square; set too high a visitor picks the address they are banned by |
-| `SYS_PASSWORD` | no | `hiroba-dev-sys-password` | admin console password; unset disables the console. The console is served at `/-/sys` (`SYS_CONSOLE_PATH` in `shared/`) |
-| `S3_ENDPOINT` | no | `http://minio:9000` | S3 compatible endpoint. With this, `S3_ACCESS_KEY` or `S3_SECRET_KEY` unset the server starts with images, video and the media loader switched off |
+| `SYS_PASSWORD` | no | none | admin console password; unset disables the console, the compose file fills in `hiroba-dev-sys-password`. The console is served at `/-/sys` (`SYS_CONSOLE_PATH` in `shared/`) |
+| `S3_ENDPOINT` | with media | none | S3 compatible endpoint. With this, `S3_ACCESS_KEY` or `S3_SECRET_KEY` unset the server starts with images, video and the media loader switched off; the compose file fills in `http://minio:9000` |
 | `S3_REGION` | no | `us-east-1` | storage region |
-| `S3_ACCESS_KEY` | with media | `hirobaminio` | storage access key |
-| `S3_SECRET_KEY` | with media | `hirobaminio` | storage secret key |
+| `S3_ACCESS_KEY` | with media | none | storage access key; the compose file fills in `hirobaminio` |
+| `S3_SECRET_KEY` | with media | none | storage secret key; the compose file fills in `hirobaminio` |
 | `S3_BUCKET_IMG` | no | `hiroba-img` | bucket for uploaded images |
 | `S3_BUCKET_C` | no | `hiroba-c` | bucket for cached remote media |
-| `S3_BUCKET_V` | no | `hiroba-v` | bucket for converted videos; nothing is written to it, what is there is served and swept |
+| `S3_BUCKET_V` | no | `hiroba-v` | bucket the original server converted videos into. Nothing is written to it any more; what is already there is still served, and expires by the bucket's rules like the rest |
 | `WEB_LOADER_KEY` | with media | none | signs remote media load requests, and is served to every visitor in the client config. Once the storage settings are present the server refuses to start without it |
 | `WEB_LOADER_HOSTS` | no | `imgur.com,i.imgur.com,pbs.twimg.com,kekeke.cc` | comma separated hosts the loader will fetch from; when set it replaces the defaults. A link to any other host still works, it just opens in a new tab instead of rendering inline. `*` allows any host. Addresses that resolve to private ranges and URLs with a non-default port are refused whatever this is set to. Remote fetches are limited to 60 per client and 600 in total per minute; cache hits are not counted |
-| `WEB_LOADER_CACHE_PATH` | no | none | directory for loaded media; unset keeps nothing on disk. |
+| `WEB_LOADER_CACHE_PATH` | no | none | directory for loaded media; unset keeps nothing on disk. `WEB_LOADER_RESULT_PATH` is accepted as a fallback name |
 | `UPLOAD_LIMIT_MB` | no | `25` | largest single upload accepted, in megabytes. Both the request body limit and the stored-object check read it. A value that is not a positive number keeps the default rather than refusing everything |
 | `FLAKE_NODE_ID` | no | `1` | id generator node number |
 | `TZ` | no | `Asia/Taipei` | the container's time zone |
@@ -53,6 +62,12 @@ message, `<NAME>` being the environment name itself. A variable set to an empty
 string counts as unset. A `PORT` that is not a port number stops the server at
 boot rather than binding something else.
 
+The console session also authorises `POST /api/sys/wipe`, which empties every media bucket and
+resets the database; the body must be `{"confirm":"wipe"}` and no page in the console calls it.
+Only the Cloudflare adapter implements the database reset — the node server answers it `501
+WIPE_UNAVAILABLE`, because resetting the file database means closing it, replacing it and
+rebuilding every service around it while requests are in flight.
+
 The login variables are in the next section. `OIDC_ISSUER`,
 `OIDC_AUTHORIZATION_ENDPOINT`, `OIDC_TOKEN_ENDPOINT` and `OIDC_JWKS_URI`
 override the Google endpoints and default to Google's own; a fork pointing at
@@ -61,7 +76,6 @@ another OpenID provider is the reason they exist.
 `GET /healthz` answers `ok` as plain text whenever the process is up. It is
 what the compose healthcheck calls. It does not touch the database or storage,
 so it reports liveness, not readiness.
-
 
 ## Login
 
@@ -88,7 +102,7 @@ accounts: a Google account has no passkey and never gains one, and the passkey
 button always signs into a passkey account, so a handle taken on one side
 cannot be claimed on the other.
 
-The TypeScript server reads these from the environment:
+The server reads these from the environment:
 
 | Variable | Required | Default | Meaning |
 | --- | --- | --- | --- |
@@ -123,8 +137,8 @@ ever see the handle you choose.
 
 ### The development login
 
-The identity tests drive login without a browser ceremony through a third way
-in. Set `DEV_LOGIN=1` and the server opens
+A third way in drives login without a browser ceremony. Set `DEV_LOGIN=1` and
+the server opens
 
 ```
 POST /api/dev/login   {"subject": "alice"}
@@ -133,7 +147,7 @@ POST /api/dev/login   {"subject": "alice"}
 which creates or finds a development account for that subject and sets the same
 session cookie a Google login would. Two calls with the same subject land on the
 same account, so you can hold two browsers and try the co-anchor and cross
-device kerma paths. It is what the anchor tests use.
+device kerma paths.
 
 It is closed unless `DEV_LOGIN` is exactly `1`, it refuses any caller that is
 not on a loopback or private address (including a request a proxy forwarded
@@ -159,14 +173,12 @@ limited.
 **Never set `DEV_LOGIN` on a deployment other people can reach.** Anyone who
 can reach the port can become any account on the site.
 
-
 ## Production
 
 The compose file is meant for development and ships throwaway defaults. For a
 real deployment set `TOKEN_SECRET`, `SYS_PASSWORD` and `WEB_LOADER_KEY` to your
 own long random values, leave `DEV_LOGIN` unset, and point the database and S3
 settings at your own server with credentials you control.
-
 
 ## Cloudflare
 
@@ -175,16 +187,12 @@ R2 for media and Workers Static Assets for the client. One Worker, two durable o
 and four buckets; no paid add-on. `cloudflare/README.md` is the deploy guide, `wrangler.json`
 the configuration and `cloudflare/deploy.sh` the one command that does it.
 
-One thing about this repository comes from that side and is easier to meet knowing why:
-
-- One dependency, `miniflare`, is a pre-release and is listed under `minimumReleaseAgeExclude`
-  in `pnpm-workspace.yaml`. There is no stable 5.x; the older stable line pins a runtime a year
-  behind the `compatibility_date` this project deploys against, so testing on it would mean
-  testing something else.
+`wrangler` depends on `miniflare`, which is a pre-release and is therefore listed under
+`minimumReleaseAgeExclude` in `pnpm-workspace.yaml`. There is no stable 5.x; the older stable
+line pins a runtime a year behind the `compatibility_date` this project deploys against.
 
 On Cloudflare, expired uploads are removed by R2 bucket lifecycle rules rather than by the
 server, which is what the deploy script configures; `cloudflare/README.md` says why that matters.
-
 
 ## Licenses
 

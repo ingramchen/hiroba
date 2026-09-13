@@ -5,9 +5,9 @@ buckets. Nothing here needs a paid add-on; the free plan covers every binding us
 limits at the bottom of this page.
 
 Everything below has been exercised against the real Workers runtime locally (`wrangler dev`,
-which runs the same `workerd` a deployment runs). **It has not been run against a Cloudflare
-account.** Each claim that rests on the account rather than on the runtime is marked
-_not verified against a real account_.
+which runs the same `workerd` a deployment runs) and deployed to one account, the demo the
+README links. What has only been read from Cloudflare's documentation rather than seen on that
+account is marked _not verified against a real account_.
 
 ## The shape
 
@@ -27,7 +27,8 @@ stay identical to the one that runs on node.
 ## Before the first deploy
 
 1. Node 24 and pnpm, then `pnpm install`.
-2. A Cloudflare account. `./node_modules/.bin/wrangler login`.
+2. A Cloudflare account. `pnpm exec wrangler login` (every `wrangler` command below is
+   `pnpm exec wrangler …`; the binary is a dev dependency, not on your PATH).
 3. An R2 API token (Cloudflare dashboard, R2 → Manage API tokens) with object read and write.
    That token's access key id and secret are `S3_ACCESS_KEY` and `S3_SECRET_KEY`.
 4. Edit `wrangler.json`:
@@ -44,7 +45,7 @@ wrangler secret put WEB_LOADER_KEY      # long random, signs remote media load u
 wrangler secret put SYS_PASSWORD        # admin console password, /-/sys
 wrangler secret put S3_ACCESS_KEY
 wrangler secret put S3_SECRET_KEY
-wrangler secret put GOOGLE_CLIENT_ID    # optional, see the README's Login section
+wrangler secret put GOOGLE_CLIENT_ID    # optional, see the Login section of DEVELOPMENT.md
 wrangler secret put GOOGLE_CLIENT_SECRET
 ```
 
@@ -117,30 +118,33 @@ one for the web-loader cache (`w/`, seven days).
 is idempotent. `lifecycle add` would append a duplicate rule on every run; do not use it here.
 
 Check what a bucket actually has with `wrangler r2 bucket lifecycle list <bucket>`.
-_Not verified against a real account_: the rule file's shape is taken from the wrangler version
-pinned in this repo, and the rules have never been applied to an R2 bucket. The equivalent rules
-are in use on MinIO, which is a different service — it shows the shape is right, not that R2
-accepts this file.
+The deploy script has applied these files to real R2 buckets and read them back, so R2 accepts
+the shape; that R2 then deletes an aged object has not been watched here, only read from its
+documentation. The rules exist for this deployment only: a node deployment gets nothing from
+these files or from the compose file and sets its own on its buckets, see the Configuration
+section of `DEVELOPMENT.md`.
 
 ## Wiping the site on a schedule
 
-`wrangler.json` declares
+The Worker has a `scheduled` handler that calls the app object's `wipe`: every object in
+`S3_BUCKET_IMG`, `S3_BUCKET_C`, `S3_BUCKET_V` and `S3_BUCKET_CACHE` is deleted, then the object's
+storage is cleared — squares, messages, accounts, passkeys, bans and the sys audit log all go with
+it. The object restarts and the next request boots an empty database from the migration bundle.
+It is what keeps a demo deployment from accumulating other people's uploads.
+
+Only a Cron Trigger schedules it; a `wrangler.json` without one wipes nothing. To run the wipe
+nightly declare
 
 ```json
 "triggers": { "crons": ["0 20 * * *"] }
 ```
 
-Cron expressions are UTC only, so `0 20 * * *` is 04:00 in Asia/Taipei. On each run the worker's
-`scheduled` handler calls the app object's `wipe`: every object in `S3_BUCKET_IMG`, `S3_BUCKET_C`,
-`S3_BUCKET_V` and `S3_BUCKET_CACHE` is deleted, then the object's storage is cleared — squares,
-messages, accounts, passkeys, bans and the sys audit log all go with it. The object restarts and
-the next request boots an empty database from the migration bundle.
+and deploy. Cron expressions are UTC only, so `0 20 * * *` is 04:00 in Asia/Taipei. Removing the
+line and deploying again stops the schedule; a cron only exists once `wrangler deploy` has applied
+it.
 
 The same wipe is reachable by hand as `POST /api/sys/wipe` with a logged-in console session and
 the body `{"confirm":"wipe"}`. There is no button for it in the console.
-
-Removing the `triggers` line and deploying again stops the schedule; a cron only exists once
-`wrangler deploy` has applied it.
 
 ## Running it locally against the Workers runtime
 
@@ -158,21 +162,10 @@ wrangler dev
 
 ## What is checked automatically
 
-`pnpm check` runs the node test suite and a second suite that boots this Worker and these durable
-objects inside `workerd` (`server/workerd/`). That is the only regression net for the Cloudflare
-side, so it is part of the ordinary gate rather than a separate command.
-
-Two costs come with that, both deliberate:
-
-- **`pnpm check` needs the `workerd` binary at install time.** It is a platform-specific download
-  (`allowBuilds: workerd: true` in `pnpm-workspace.yaml`). If it fails to install, the whole gate
-  reds, node half included. The alternative was to verify the Cloudflare adapter against
-  documentation, which is how three of this port's assumptions turned out to be wrong.
-- **One dependency is a pre-release**: `miniflare@5.20260910.0-alpha`, listed under
-  `minimumReleaseAgeExclude` in `pnpm-workspace.yaml`. There is no stable 5.x — the `latest` tag
-  *is* the alpha. The 3.x line pins a 2025-07 `workerd`, which cannot honour the
-  `compatibility_date` below, so verifying against it would mean verifying a runtime this project
-  does not deploy.
+**One dependency is a pre-release**: `wrangler` pulls in `miniflare@5.20260910.0-alpha`, listed
+under `minimumReleaseAgeExclude` in `pnpm-workspace.yaml`. There is no stable 5.x — the `latest`
+tag *is* the alpha. The 3.x line pins a 2025-07 `workerd`, which cannot honour the
+`compatibility_date` below.
 
 `compatibility_date` is `2026-09-01` with `nodejs_compat`. Every runtime behaviour the adapter
 relies on — `node:crypto`, durable-object SQLite, WebSocket hibernation — was checked at that
@@ -198,8 +191,8 @@ WebSocket messages are billed 20 incoming messages to one request, and hibernati
 not billed for the time they sit idle. A connected client sends a heartbeat every three minutes,
 so an always-open tab costs about 24 requests a day on its own.
 
-There is no Cron Trigger and nothing is scheduled outside the app object: expiry is the bucket's
-job, and the nightly maintenance runs off a durable-object alarm.
+Apart from the optional wipe cron above nothing is scheduled outside the app object: expiry is the
+bucket's job, and the nightly maintenance runs off a durable-object alarm.
 
 ## Things a deployment will meet that the local runtime cannot show
 

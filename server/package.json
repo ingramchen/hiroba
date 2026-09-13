@@ -27,8 +27,6 @@
     "@types/node": "24.13.3",
     "@types/ws": "8.18.1",
     "drizzle-kit": "0.31.10",
-    "esbuild": "0.28.2",
-    "miniflare": "5.20260910.0-alpha",
     "typescript": "6.0.3"
   }
 }
