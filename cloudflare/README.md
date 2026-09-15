@@ -149,8 +149,8 @@ the body `{"confirm":"wipe"}`. There is no button for it in the console.
 ## Running it locally against the Workers runtime
 
 `wrangler dev` runs the deployed code in `workerd`, the runtime Cloudflare runs, with local
-storage. It needs an S3 compatible server for media; MinIO on port 9000 is what the compose file
-already provides.
+storage. It needs an S3 compatible server for media; RustFS on port 9000 is what the compose file
+already provides (`docker compose up -d s3 s3-init`).
 
 ```
 cp .dev.vars.example .dev.vars      # then edit

@@ -18,19 +18,18 @@ else.
 Uploads expire the way the original buckets did: objects under `t/` in each
 bucket (uploaded images and videos) are meant to go seven days after they were
 stored, objects under `m/` (poster images) after thirty-five days. Nothing in
-the server deletes an expired object; the bucket's lifecycle rules do, so set
-them on each bucket (MinIO: `mc ilm import`; on Cloudflare the deploy script
-sets them, see `cloudflare/README.md`). Without the rules nothing fails and
-nothing is logged; the objects simply stay. Square thumbnails (`t/thumb_…`) are
-one-week objects like any other upload and are also deleted with their picture.
+the server deletes an expired object; the bucket's lifecycle rules do. Without
+the rules nothing fails and nothing is logged; the objects simply stay. Square
+thumbnails (`t/thumb_…`) are one-week objects like any other upload and are
+also deleted with their picture.
 
-The shipped compose file is one of the places without them: its `minio-init`
-service creates the buckets and sets no lifecycle rules, so a deployment built
-on it has to add them itself: `cloudflare/minio-lifecycle.json` holds the two
-rules in MinIO's import format, so `mc ilm import local/hiroba-img <
-cloudflare/minio-lifecycle.json` (and again for `hiroba-c` and `hiroba-v`)
-is enough. They are the same prefix-and-age entries the
-`cloudflare/r2-lifecycle*.json` files carry for R2.
+`node server/dist/adapters/node/s3-init.js` sets the buckets up against an S3
+compatible endpoint that supports bucket policies and lifecycle configuration: it creates the three buckets named by `S3_BUCKET_*`,
+allows anonymous `GetObject` on them and writes the two rules
+(`server/src/adapters/node/bucketSetup.ts`). The compose file runs it as the
+`s3-init` service against RustFS before the app starts; on Cloudflare the
+deploy script puts the same rules on R2 from the `cloudflare/r2-lifecycle*.json`
+files (see `cloudflare/README.md`).
 
 | Variable | Required | Default | Meaning |
 | --- | --- | --- | --- |
@@ -40,10 +39,10 @@ is enough. They are the same prefix-and-age entries the
 | `WEB_DIST` | no | `public` | directory the built client is served from; relative paths resolve against the server package |
 | `TRUST_PROXY` | no | `0` | how many right-hand entries of `X-Forwarded-For` were written by proxies you run. `0` trusts none and identifies a visitor by the connecting socket address; behind one reverse proxy set `1`. Set too low every visitor looks like one address, and a single forbid then covers the whole square; set too high a visitor picks the address they are banned by |
 | `SYS_PASSWORD` | no | none | admin console password; unset disables the console, the compose file fills in `hiroba-dev-sys-password`. The console is served at `/-/sys` (`SYS_CONSOLE_PATH` in `shared/`) |
-| `S3_ENDPOINT` | with media | none | S3 compatible endpoint. With this, `S3_ACCESS_KEY` or `S3_SECRET_KEY` unset the server starts with images, video and the media loader switched off; the compose file fills in `http://minio:9000` |
+| `S3_ENDPOINT` | with media | none | S3 compatible endpoint. With this, `S3_ACCESS_KEY` or `S3_SECRET_KEY` unset the server starts with images, video and the media loader switched off; the compose file fills in `http://s3:9000` |
 | `S3_REGION` | no | `us-east-1` | storage region |
-| `S3_ACCESS_KEY` | with media | none | storage access key; the compose file fills in `hirobaminio` |
-| `S3_SECRET_KEY` | with media | none | storage secret key; the compose file fills in `hirobaminio` |
+| `S3_ACCESS_KEY` | with media | none | storage access key; the compose file fills in `hirobas3` |
+| `S3_SECRET_KEY` | with media | none | storage secret key; the compose file fills in `hirobas3secret` |
 | `S3_BUCKET_IMG` | no | `hiroba-img` | bucket for uploaded images |
 | `S3_BUCKET_C` | no | `hiroba-c` | bucket for cached remote media |
 | `S3_BUCKET_V` | no | `hiroba-v` | bucket the original server converted videos into. Nothing is written to it any more; what is already there is still served, and expires by the bucket's rules like the rest |

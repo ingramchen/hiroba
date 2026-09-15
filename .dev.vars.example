@@ -8,8 +8,8 @@ NODE_ENV=development
 TOKEN_SECRET=hiroba-dev-token-secret
 SYS_PASSWORD=hiroba-dev-sys-password
 WEB_LOADER_KEY=hiroba-dev-web-loader-key
-S3_ACCESS_KEY=hirobaminio
-S3_SECRET_KEY=hirobaminio
+S3_ACCESS_KEY=hirobas3
+S3_SECRET_KEY=hirobas3secret
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
 # point `wrangler dev` at a local S3 compatible server rather than R2
