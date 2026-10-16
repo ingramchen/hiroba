@@ -1,7 +1,7 @@
 # Messages
 
 `generated/zh-TW.ts` and `generated/en.ts` are the message bundles. `messages`
-holds the 208 UI strings and `transport` the 3 connection-state strings, keyed
+holds the 209 UI strings and `transport` the 3 connection-state strings, keyed
 identically in both locales.
 
 ## Placeholder mapping

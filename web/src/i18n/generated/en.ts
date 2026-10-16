@@ -218,6 +218,7 @@ export const messages = {
   aboutTitle: 'About',
   aboutDescription:
     'An anonymous topic chat. This site is an independent re-implementation of kekeke.cc and is not affiliated with it; "kekeke" is that site\'s name and trademark.',
+  aboutSourceLabel: 'Source:',
   aboutLicenseLabel: 'License:',
   aboutCreditsTitle: 'Third-party works',
   aboutCreditEmoji:

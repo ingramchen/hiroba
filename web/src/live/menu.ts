@@ -2,6 +2,7 @@ import type { MenuEntry } from '../gwt/types';
 import type { Translator } from '../i18n';
 import type { DeviceShape } from '../runtime';
 
+export const SOURCE_URL = 'https://github.com/ingramchen/hiroba';
 export const LICENSE_NAME = 'MIT License';
 
 export function homeMenuEntries(i18n: Translator, username: string | null): MenuEntry[] {

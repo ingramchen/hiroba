@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Popup from '../../gwt/Popup.vue';
 import { VerticalPanel } from '../../gwt/panels';
-import { LICENSE_NAME } from '../../live/menu';
+import { LICENSE_NAME, SOURCE_URL } from '../../live/menu';
 import { t } from '../../runtime';
 import { useEscapeKey } from './useEscapeKey';
 
@@ -23,6 +23,10 @@ useEscapeKey(() => emit('close'));
     <VerticalPanel :spacing="5" :cells="[{}, {}, {}, {}, { align: 'center' }]">
       <div class="gwt-HTML about-block">{{ i18n.t('aboutDescription') }}</div>
       <div class="gwt-HTML about-block">
+        <p>
+          {{ i18n.t('aboutSourceLabel') }}
+          <a :href="SOURCE_URL" target="_blank" rel="noopener">{{ SOURCE_URL }}</a>
+        </p>
         <p>{{ i18n.t('aboutLicenseLabel') }} {{ LICENSE_NAME }}</p>
       </div>
       <div class="gwt-HTML about-block about-credits">

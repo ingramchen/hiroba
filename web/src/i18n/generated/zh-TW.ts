@@ -214,6 +214,7 @@ export const messages = {
   aboutTitle: '關於',
   aboutDescription:
     '匿名的話題聊天室。本站是 kekeke.cc 的複刻版，與原站無關；kekeke 為原站的名稱與商標。',
+  aboutSourceLabel: '原始碼:',
   aboutLicenseLabel: '授權條款:',
   aboutCreditsTitle: '第三方素材',
   aboutCreditEmoji:
